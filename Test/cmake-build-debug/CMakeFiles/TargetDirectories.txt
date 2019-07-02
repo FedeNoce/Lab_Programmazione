@@ -1,0 +1,3 @@
+/home/federico/Scrivania/Matrix/Test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/federico/Scrivania/Matrix/Test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/federico/Scrivania/Matrix/Test/cmake-build-debug/CMakeFiles/Test.dir
