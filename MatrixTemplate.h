@@ -1,9 +1,6 @@
-//
-// Created by federico on 01/03/19.
-//
 
-#ifndef MATRIC_CALCULATOR_MATRIXTEMPLATE_H
-#define MATRIC_CALCULATOR_MATRIXTEMPLATE_H
+#ifndef MATRIX_CALCULATOR_MATRIXTEMPLATE_H
+#define MATRIX_CALCULATOR_MATRIXTEMPLATE_H
 
 #include <iostream>
 #include <stdexcept>
@@ -165,4 +162,4 @@ private:
     T *buffer;
 };
 
-#endif //MATRIC_CALCULATOR_MATRIXTEMPLATE_H
+#endif //MATRIX_CALCULATOR_MATRIXTEMPLATE_H
