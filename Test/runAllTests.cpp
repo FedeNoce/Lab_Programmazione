@@ -1,6 +1,4 @@
-//
-// Created by federico on 01/03/19.
-//
+
 #include "gtest/gtest.h"
 
 int main(int argc, char** argv) {
