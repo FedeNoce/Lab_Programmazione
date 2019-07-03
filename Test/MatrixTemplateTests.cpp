@@ -1,18 +1,21 @@
 #include "gtest/gtest.h"
 #include "../MatrixTemplate.h"
 
+#include "gtest/gtest.h"
+#include "../MatrixTemplate.h"
+
 TEST(MatrixTemplate, ConstructorTest) {
-MatrixTemplate<int> A(3,5);
-ASSERT_EQ(3, A.getRows());
-ASSERT_EQ(5, A.getColumns());
-ASSERT_EQ(A.getValue(1,1),0);
+MatrixTemplate<int> A(2,3);
+ASSERT_EQ(2, A.getRows());
+ASSERT_EQ(3, A.getColumns());
+ASSERT_EQ(A.getValue(1,3),0);
 }
 
 TEST(MatrixTemplate, CopyConstTest){
 MatrixTemplate<float> A(2,4);
-A.setValue(1,1, 1.2);
-A.setValue(1,2, 2.3);
-A.setValue(1,3, 3);
+A.setValue(1,1, 0.25);
+A.setValue(1,2, 1.3);
+A.setValue(1,3, 3.02);
 A.setValue(2,1, 3.5);
 MatrixTemplate<float> B(A);
 ASSERT_TRUE(A==B);
@@ -20,34 +23,34 @@ ASSERT_TRUE(A==B);
 
 TEST(MatrixTemplate, EqualOperatorTest){
 MatrixTemplate<int> A(2,3);
-A.setValue(1,1,3);
+A.setValue(1,1,1);
 A.setValue(1,2,2);
-A.setValue(2,2,5);
+A.setValue(2,2,3);
 MatrixTemplate<int> B=A;
-ASSERT_EQ(B.getValue(1,1), 3);
+ASSERT_EQ(B.getValue(1,1), 1);
 ASSERT_EQ(B.getValue(1,2), 2);
-ASSERT_EQ(B.getValue(2,2), 5);
+ASSERT_EQ(B.getValue(2,2), 3);
 }
 
 TEST(MatrixTemplate, EqualTest){
-MatrixTemplate<long int> A(2,5);
-A.setValue(1,1,35);
-A.setValue(1,2,75);
-A.setValue(2,2,66);
-MatrixTemplate<long int> B (A);
+MatrixTemplate<int> A(2,3);
+A.setValue(1,1,22);
+A.setValue(1,2,33);
+A.setValue(2,2,44);
+MatrixTemplate<int> B (A);
 ASSERT_TRUE(A==B);
-B.setValue(1,1,50);
+B.setValue(1,1,30);
 ASSERT_FALSE(A==B);
 }
 
 TEST(MatrixTemplate, NotEqualTest){
 MatrixTemplate<long int> A(2,5);
-A.setValue(1,1,35);
-A.setValue(1,2,75);
-A.setValue(2,2,66);
+A.setValue(1,1,22);
+A.setValue(1,2,33);
+A.setValue(2,2,44);
 MatrixTemplate<long int> B (A);
 ASSERT_FALSE(A!=B);
-B.setValue(1,1,50);
+B.setValue(1,1,30);
 ASSERT_TRUE(A!=B);
 }
 
@@ -169,4 +172,16 @@ MatrixTemplate<int> B(A.selectColumn(1));
 ASSERT_EQ(B.getValue(1,1),4);
 ASSERT_EQ(B.getValue(2,1),1);
 ASSERT_ANY_THROW(A.selectColumn(3));}
+
+
+
+
+
+
+
+
+
+
+
+
 
